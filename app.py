@@ -12,3 +12,10 @@ def prinpage():
 @app.route('/information')
 def information():
     return render_template('info.html')
+
+@app.route('/classification', methods=['GET', 'POST'])
+def classification():
+    return render_template('classification.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
