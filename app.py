@@ -13,6 +13,10 @@ def prinpage():
 def information():
     return render_template('info.html')
 
+@app.route('/conceps')
+def conceps():
+    return render_template('conceps.html')
+
 @app.route('/classification', methods=['GET', 'POST'])
 def classification():
     return render_template('classification.html')
