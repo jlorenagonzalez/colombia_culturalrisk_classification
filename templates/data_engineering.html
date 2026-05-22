@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 2.1 - Dataset Selection & Contextual Framing</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f8fafc;
+            color: #334155;
+            padding-top: 90px;
+        }
+
+        .jumbotron-selection {
+            background: linear-gradient(135deg, #0f172a 0%, #115e59 100%);
+            color: white;
+            padding: 5rem 0;
+            border-radius: 0 0 2.5rem 2.5rem;
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+        }
+
+        .architecture-card {
+            background: #ffffff;
+            border: none;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03);
+            margin-bottom: 2.5rem;
+            border: 1px solid #e2e8f0;
+            padding: 2.5rem;
+        }
+
+        .pill-meta {
+            background: rgba(17, 94, 89, 0.1);
+            color: #0f766e;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .source-box {
+            background: #f1f5f9;
+            border-left: 5px solid #14b8a6;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            height: 100%;
+        }
+
+        .variable-badge {
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+        }
+
+        .badge-num {
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+
+        .badge-cat {
+            background: #fef3c7;
+            color: #b45309;
+        }
+
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+
+<body>
+
+    {% include 'navar.html' %}
+
+    <header class="jumbotron-selection mb-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-9">
+                    <span class="badge mb-2"
+                        style="background-color: rgba(20, 184, 166, 0.2); color: #2dd4bf; padding: 0.5rem 1rem; border-radius: 50px;">CRISP-ML
+                        Methodology</span>
+                    <h1 class="display-5 fw-bold mb-3">Dataset Selection & Acquisition</h1>
+                    <p class="lead opacity-85 text-balance">Consolidating a multidimensional telemetry repository for
+                        1,123 Colombian municipalities to mathematically model the degradation parameters of intangible
+                        cultural heritage.</p>
+                </div>
+                <div class="col-lg-3 text-end d-none d-lg-block">
+                    <i class="bi bi-folder-symlink" style="font-size: 7rem; color: rgba(255,255,255,0.12);"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="architecture-card">
+            <span class="pill-meta">Context & Provenance</span>
+            <h2 class="fw-bold mb-4 text-dark">Real-World Information Fusing</h2>
+            <p class="text-muted leading-relaxed">
+                Predicting cultural tradition loss cannot be accomplished via isolated, qualitative sociological
+                surveys. In order to construct a scalable Machine Learning system, we designed a comprehensive matrix
+                containing **{{ total }} rows**, which covers exactly 100% of the political subdivisions
+                (municipalities) of Colombia.
+                The dataset is structurally bound by fusing two real-world governmental institutions data streams:
+            </p>
+
+            <div class="row g-4 mt-2">
+                <div class="col-md-6">
+                    <div class="source-box">
+                        <h5><i class="bi bi-building-fill text-teal me-2" style="color: #115e59;"></i>Socio-Demographic
+                            Stream (DANE)</h5>
+                        <p class="small text-muted mb-0">
+                            Derived from the National Population Census. It injects structural territorial metrics such
+                            as poverty indices (Unsatisfied Basic Needs - NBI), age pyramids, and migratory phenomena.
+                            This addresses the socio-economic root causes of community displacement.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="source-box">
+                        <h5><i class="bi bi-masks text-teal me-2" style="color: #115e59;"></i>Cultural Telemetry Stream
+                            (MinCultura)</h5>
+                        <p class="small text-muted mb-0">
+                            Extracted from internal public registries of the Ministry of Culture and regional
+                            secretariats. It tracks public financial per-capita budget stimulus injections, active
+                            community artistic collectives, and historical traditional festival frequency.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="architecture-card">
+            <span class="pill-meta">Technical Compliance</span>
+            <h2 class="fw-bold mb-3 text-dark">Data Matrix Architecture & Volume</h2>
+            <p class="text-muted">
+                As demanded by rigorous machine learning standards, a model's capacity to minimize variance and avoid
+                overfitting depends heavily on sample volume. Our data pipeline maps out a rich architectural layout:
+            </p>
+
+            <div class="row align-items-center my-4 g-4 text-center">
+                <div class="col-md-4">
+                    <div class="p-3 border rounded-3 bg-light">
+                        <h1 class="fw-bold text-dark mb-0">{{ total }}</h1>
+                        <span class="small text-muted text-uppercase fw-medium">Rows (Municipalities)</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 border rounded-3 bg-light">
+                        <h1 class="fw-bold text-dark mb-0">11</h1>
+                        <span class="small text-muted text-uppercase fw-medium">Input Features</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 border rounded-3 bg-light">
+                        <h1 class="fw-bold text-dark mb-0">1</h1>
+                        <span class="small text-muted text-uppercase fw-medium">Categorical Target</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-muted small">
+                <strong>Minimum Volume Validation:</strong> By comprising 1,123 continuous geographic records, the
+                compilation easily scales past the strict requirement of 1,000 observations. This density guarantees
+                that during the classification split stage, sample cells remain representative across all target strata,
+                even in highly isolated administrative categories (such as 6th-category frontier municipalities).
+            </p>
+        </div>
+
+        <div class="architecture-card">
+            <span class="pill-meta">Feature Schema</span>
+            <h2 class="fw-bold mb-4 text-dark">Variable Classification Matrix</h2>
+            <p class="text-muted">The dataset incorporates a robust balance of continuous, discrete, and nominal
+                variables to fuel multidimensional learning architectures:</p>
+
+            <div class="table-responsive border rounded-3 mt-3">
+                <table class="table table-hover align-middle mb-0 text-center">
+                    <thead class="table-light text-secondary small text-uppercase">
+                        <tr>
+                            <th class="text-start ps-4">Technical Key Name</th>
+                            <th>Statistical Type</th>
+                            <th>Domain Focus</th>
+                            <th class="text-start">Analytical Indicator Description</th>
+                        </tr>
+                    </thead>
+                    <tbody class="small">
+                        <tr>
+                            <td class="text-start ps-4"><code>municipality_id</code></td>
+                            <td><span class="variable-badge badge-cat">Categorical String</span></td>
+                            <td>Spatial Key</td>
+                            <td class="text-start text-muted">Unique alpha-numerical string mapper mimicking
+                                standardized DANE coding keys.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start ps-4"><code>net_youth_migration</code></td>
+                            <td><span class="variable-badge badge-num">Numerical Float</span></td>
+                            <td>Demographics</td>
+                            <td class="text-start text-muted">Annual percentage tracking population aged 15-28 migrating
+                                out of the territory.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start ps-4"><code>primary_poverty_index</code></td>
+                            <td><span class="variable-badge badge-num">Numerical Float</span></td>
+                            <td>Macroeconomics</td>
+                            <td class="text-start text-muted">The Unsatisfied Basic Needs Index (NBI) measuring material
+                                local deprivation.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start ps-4"><code>annual_festivals_count</code></td>
+                            <td><span class="variable-badge badge-num">Numerical Integer</span></td>
+                            <td>Vitality Metric</td>
+                            <td class="text-start text-muted">Total number of active, repetitive ancestral festivals
+                                registered in public records.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start ps-4"><code>subsidized_cultural_budget</code></td>
+                            <td><span class="variable-badge badge-num">Numerical Continuous</span></td>
+                            <td>State Finance</td>
+                            <td class="text-start text-muted">Public per-capita economic investment assigned for local
+                                heritage safeguarding.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start ps-4"><code>dominant_ethnic_group</code></td>
+                            <td><span class="variable-badge badge-cat">Categorical Nominal</span></td>
+                            <td>Identity Metric</td>
+                            <td class="text-start text-muted">Predominant ethnic minority ancestral group localized
+                                inside the municipal perimeter.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start ps-4"><code>cultural_erosion_risk</code></td>
+                            <td><span class="variable-badge badge-cat">Categorical Ordinal</span></td>
+                            <td>Target Vector</td>
+                            <td class="text-start text-muted"><strong>The Model Target:</strong> Risk boundary labels
+                                mapped linearly as Low, Medium, High, and Critical.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-4 mt-5">
+        <p class="mb-0 small opacity-75">Systems Engineering - Machine Learning
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -21,5 +21,14 @@ def conceps():
 def classification():
     return render_template('classification.html')
 
+
+@app.route('/data_engineering')
+def data_engineering():
+    return render_template('data_engineering.html')
+
+@app.route('/data_understanding')
+def data_understanding():
+    return render_template('data_understanding.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
