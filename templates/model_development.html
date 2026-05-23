@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Development - Cultural Risk Assessment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .custom-header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 40px 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .metric-table th {
+            background-color: #f8f9fa;
+        }
+        .matrix-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .card-result {
+            background-color: #e8f4fd;
+            border-left: 5px solid #2980b9;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+     {% include 'navar.html' %}
+    <div class="container mb-5">
+        <div class="custom-header text-center">
+            <h1>Model Development Module</h1>
+            <p class="lead">Implementation, evaluation, and interactive validation testing of 3 Machine Learning classification algorithms.</p>
+        </div>
+
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-secondary text-white">
+                <h4 class="mb-0">Selected Classification Models Summary</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>Logistic Regression</h5>
+                        <p class="text-muted text-justify small">A structural linear classification model optimized using a maximum iteration roof of 1000. It computes boundary probabilities to isolate ordinal features and assign qualitative cultural degradation levels.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Decision Tree</h5>
+                        <p class="text-muted text-justify small">A non-linear top-down flowchart split sequence capped at a maximum depth parameter of 5. It partitions local municipal segments based on numerical thresholds of youth migration and poverty margins.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Random Forest</h5>
+                        <p class="text-muted text-justify small">An advanced ensemble metadata framework generating an array cluster of 100 independent estimator trees. It mitigates internal overfitting patterns to deliver stable and balanced generalization scores.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">Model Performance Comparison Matrix (Validation Process)</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped align-middle text-center metric-table">
+                        <thead>
+                            <tr>
+                                <th class="text-start">Algorithm Name</th>
+                                <th>Accuracy</th>
+                                <th>Precision</th>
+                                <th>Recall</th>
+                                <th>F1-Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for name, values in metrics.items() %}
+                            <tr>
+                                <td class="text-start fw-bold">{{ name }}</td>
+                                <td class="text-success fw-bold">{{ values['Accuracy'] }}</td>
+                                <td>{{ values['Precision'] }}</td>
+                                <td>{{ values['Recall'] }}</td>
+                                <td class="text-primary fw-bold">{{ values['F1-Score'] }}</td>
+                            </tr>
+                            {% else %}
+                            <tr>
+                                <td colspan="5" class="text-danger">No metric values fetched. Check system initialization logs.</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-dark text-white">
+                <h4 class="mb-0">Graphical Visualizations: Confusion Matrices</h4>
+            </div>
+            <div class="card-body">
+                <div class="row text-center">
+                    <div class="col-md-4 mb-3">
+                        <h6>Logistic Regression</h6>
+                        <img src="{{ url_for('static', filename='cm_logistic_regression.png') }}" class="matrix-img" alt="Logistic Regression Confusion Matrix">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <h6>Decision Tree</h6>
+                        <img src="{{ url_for('static', filename='cm_decision_tree.png') }}" class="matrix-img" alt="Decision Tree Confusion Matrix">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <h6>Random Forest</h6>
+                        <img src="{{ url_for('static', filename='cm_random_forest.png') }}" class="matrix-img" alt="Random Forest Confusion Matrix">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-info text-white">
+                <h4 class="mb-0">Functional Prediction Testing - Input Form</h4>
+            </div>
+            <div class="card-body">
+                <form action="/model_development" method="POST" class="row g-3">
+                    <div class="col-md-4">
+                        <label class="form-label">Net Youth Migration Rate (%)</label>
+                        <input type="number" step="any" name="net_youth_migration" class="form-control" value="10.5" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Median Age (Years)</label>
+                        <input type="number" step="any" name="median_age" class="form-control" value="32.0" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Indigenous Population Ratio (0-1)</label>
+                        <input type="number" step="any" name="indigenous_pop_ratio" class="form-control" value="0.15" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Primary Poverty Index (Score)</label>
+                        <input type="number" step="any" name="primary_poverty_index" class="form-control" value="65.4" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Annual Festivals Count</label>
+                        <input type="number" name="annual_festivals_count" class="form-control" value="3" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Active Cultural Groups</label>
+                        <input type="number" name="active_cultural_groups" class="form-control" value="12" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Subsidized Cultural Budget (COP/USD)</label>
+                        <input type="number" step="any" name="subsidized_cultural_budget" class="form-control" value="25000" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Select Classification Algorithm</label>
+                        <select name="model_choice" class="form-select" required>
+                            <option value="Logistic Regression">Logistic Regression</option>
+                            <option value="Decision Tree">Decision Tree Classifier</option>
+                            <option value="Random Forest">Random Forest Classifier</option>
+                        </select>
+                    </div>
+                    <div class="col-12 text-end">
+                        <button type="submit" class="btn btn-primary px-5">Generate Live Inference Prediction</button>
+                    </div>
+                </form>
+
+                {% if prediction %}
+                <div class="card p-3 mt-4 card-result">
+                    <h5>Inference Process Output Logs:</h5>
+                    <p><strong>Selected Execution Algorithm:</strong> {{ chosen_model }}</p>
+                    <p><strong>Captured Attribute Matrix Vector:</strong> {{ inputs_sent }}</p>
+                    <hr>
+                    <h4 class="text-danger">Predicted Cultural Erosion Risk: <span class="badge bg-danger">{{ prediction }}</span></h4>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
