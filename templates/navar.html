@@ -102,7 +102,6 @@
     }
 
     @media(max-width: 991px) {
-
         .nav-link,
         .dropdown-toggle {
             margin-left: 0;
@@ -120,7 +119,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="{{ url_for('prinpage') }}">
+        <a class="navbar-brand" href="{{ url_for('business_understanding') }}">
             <i class="bi bi-globe-americas"></i>
             Cultural Risk ML
         </a>
@@ -132,17 +131,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto align-items-lg-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('prinpage') }}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('prinpage') }}#business-understanding">CRISP-ML Methodology</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('conceps') }}">Business Understanding</a>
                 </li>
+                
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('data_understanding') }}">Data Understanding</a>
                 </li>
+                
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('data_engineering') }}">Data Engineering</a>
                 </li>
@@ -150,17 +145,23 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="modelEngineeringDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        Model Phases
+                        Model & Deployment
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="modelEngineeringDropdown">
                         <li>
-                            <a class="dropdown-item" href="{{ url_for('model_development') }}">
-                                <i class="bi bi-cpu-fill me-2 text-primary"></i>Model Engineering
+                            <a class="dropdown-item" href="{{ url_for('model_engineering') }}">
+                                <i class="bi bi-cpu-fill me-2 text-primary"></i>4. Model Engineering
                             </a>
                         </li>
                         <li>
                             <a class="dropdown-item" href="{{ url_for('model_evaluation') }}">
-                                <i class="bi bi-bar-chart-line-fill me-2 text-success"></i>Theree Develoment Models
+                                <i class="bi bi-bar-chart-line-fill me-2 text-success"></i>5. Model Evaluation
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider" style="border-color: #1e293b;"></li>
+                        <li>
+                            <a class="dropdown-item" href="{{ url_for('prediction_system') }}">
+                                <i class="bi bi-lightning-charge-fill me-2 text-warning"></i>6. Prediction System
                             </a>
                         </li>
                     </ul>
