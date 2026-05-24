@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,8 @@
     <!-- Bootstrap 5 CSS + Icons + Google Fonts -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -37,7 +39,7 @@
             right: -20%;
             width: 80%;
             height: 200%;
-            background: radial-gradient(circle, rgba(230,126,34,0.08) 0%, rgba(0,0,0,0) 70%);
+            background: radial-gradient(circle, rgba(230, 126, 34, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
             pointer-events: none;
         }
 
@@ -67,14 +69,14 @@
             justify-content: center;
             color: white;
             font-size: 1.8rem;
-            box-shadow: 0 8px 14px rgba(230,126,34,0.25);
+            box-shadow: 0 8px 14px rgba(230, 126, 34, 0.25);
         }
 
         /* Badges personalizados */
         .badge-custom {
-            background: rgba(255,255,255,0.12);
+            background: rgba(255, 255, 255, 0.12);
             backdrop-filter: blur(4px);
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             font-weight: 500;
             padding: 0.5rem 1rem;
             border-radius: 2rem;
@@ -135,7 +137,7 @@
             color: #cddfe7;
             padding: 2.5rem 0;
             margin-top: 4rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         /* Tarjeta oscura con gradiente */
@@ -185,188 +187,249 @@
         }
     </style>
 </head>
+
 <body>
 
-{% include 'navar.html' %}
+    {% include 'navar.html' %}
 
-<!-- Hero Section -->
-<section class="hero">
-    <div class="container">
-        <div class="row align-items-center g-5">
-            <div class="col-md-8">
-                <h1 class="display-4 fw-bold mb-3" style="letter-spacing: -0.02em;">
-                    <i class="bi bi-diagram-3 me-2"></i>Cultural Heritage Risk Classifier
-                </h1>
-                <p class="lead mb-4 opacity-90">Automated classification of Colombian municipalities based on risk of losing cultural traditions using open demographic & cultural data.</p>
-                <div class="d-flex flex-wrap gap-3">
-                    <span class="badge-custom"><i class="bi bi-database"></i> Open Data</span>
-                    <span class="badge-custom"><i class="bi bi-music-note"></i> Cultural Metrics</span>
-                    <span class="badge-custom"><i class="bi bi-geo-alt"></i> 1,123 Municipalities</span>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-md-8">
+                    <h1 class="display-4 fw-bold mb-3" style="letter-spacing: -0.02em;">
+                        <i class="bi bi-diagram-3 me-2"></i>Cultural Heritage Risk Classifier
+                    </h1>
+                    <p class="lead mb-4 opacity-90">Automated classification of Colombian municipalities based on risk
+                        of losing cultural traditions using open demographic & cultural data.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <span class="badge-custom"><i class="bi bi-database"></i> Open Data</span>
+                        <span class="badge-custom"><i class="bi bi-music-note"></i> Cultural Metrics</span>
+                        <span class="badge-custom"><i class="bi bi-geo-alt"></i> 1,123 Municipalities</span>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4 text-center">
-                <div class="bg-white bg-opacity-10 d-inline-block p-4 rounded-4 backdrop-blur-sm">
-                    <i class="bi bi-shield-shaded" style="font-size: 4rem; opacity: 0.9;"></i>
+                <div class="col-md-4 text-center">
+                    <div class="bg-white bg-opacity-10 d-inline-block p-4 rounded-4 backdrop-blur-sm">
+                        <i class="bi bi-shield-shaded" style="font-size: 4rem; opacity: 0.9;"></i>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Main Content -->
-<div class="container my-5 py-3">
+    <!-- Main Content -->
+    <div class="container my-5 py-3">
 
-    <!-- Phase 1 Header with style -->
-    <div class="text-center mb-5">
-        <h2 class="section-title-custom">Business Understanding</h2>
-        <p class="text-muted" style="font-size: 1.1rem;">Framing the problem, objectives, and strategic value</p>
-        <hr class="divider-light">
-    </div>
+        <!-- Phase 1 Header with style -->
+        <div class="text-center mb-5">
+            <h2 class="section-title-custom">Business Understanding</h2>
+            <p class="text-muted" style="font-size: 1.1rem;">Framing the problem, objectives, and strategic value</p>
+            <hr class="divider-light">
+        </div>
 
-    <!-- 1. Problem Context -->
-    <div class="row g-5 mb-5">
-        <div class="col-12">
-            <div class="card-modern p-4">
-                <div class="d-flex align-items-start gap-4 flex-wrap flex-md-nowrap">
-                    <div class="icon-circle flex-shrink-0"><i class="bi bi-question-circle"></i></div>
-                    <div>
-                        <h3 class="fw-bold mb-3" style="color:#1e2f3a;">Context of the Problem</h3>
-                        <p class="lead" style="font-weight: 500; color: #2c3e4e;">Colombia's vast cultural diversity — with over 102 indigenous groups, Afro-Colombian communities, and local peasant traditions — faces accelerated erosion due to urbanization, migration, globalization, and lack of safeguarding policies. Many municipalities lack quantitative indicators to measure the vitality of their intangible heritage (festivals, oral traditions, craftsmanship, rituals). Without data-driven risk classification, cultural policies are reactive, underfunded, or misdirected.</p>
-                        <div class="soft-highlight mt-3">
-                            <strong><i class="bi bi-info-circle me-2"></i> Key driver:</strong> The absence of an automatic, replicable system to identify municipalities where traditions are most vulnerable — before they disappear.
+        <!-- 1. Problem Context -->
+        <div class="row g-5 mb-5">
+            <div class="col-12">
+                <div class="card-modern p-4">
+                    <div class="d-flex align-items-start gap-4 flex-wrap flex-md-nowrap">
+                        <div class="icon-circle flex-shrink-0"><i class="bi bi-question-circle"></i></div>
+                        <div>
+                            <h3 class="fw-bold mb-3" style="color:#1e2f3a;">Context of the Problem</h3>
+                            <p class="lead" style="font-weight: 500; color: #2c3e4e;">Colombia's vast cultural diversity
+                                — with over 102 indigenous groups, Afro-Colombian communities, and local peasant
+                                traditions — faces accelerated erosion due to urbanization, migration, globalization,
+                                and lack of safeguarding policies. Many municipalities lack quantitative indicators to
+                                measure the vitality of their intangible heritage (festivals, oral traditions,
+                                craftsmanship, rituals). Without data-driven risk classification, cultural policies are
+                                reactive, underfunded, or misdirected.</p>
+                            <div class="soft-highlight mt-3">
+                                <strong><i class="bi bi-info-circle me-2"></i> Key driver:</strong> The absence of an
+                                automatic, replicable system to identify municipalities where traditions are most
+                                vulnerable — before they disappear.
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- 2. Business Objectives and 3. Questions -->
-    <div class="row g-5 mb-5">
-        <div class="col-md-6">
-            <div class="card-modern p-4">
-                <div class="d-flex align-items-center gap-3 mb-4">
-                    <div class="icon-circle"><i class="bi bi-trophy"></i></div>
-                    <h3 class="fw-bold mb-0">Business Objectives</h3>
+        <!-- 2. Business Objectives and 3. Questions -->
+        <div class="row g-5 mb-5">
+            <div class="col-md-6">
+                <div class="card-modern p-4">
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <div class="icon-circle"><i class="bi bi-trophy"></i></div>
+                        <h3 class="fw-bold mb-0">Business Objectives</h3>
+                    </div>
+                    <ul class="list-modern">
+                        <li><i class="bi bi-check-lg"></i> Develop an <strong>automated ML classifier</strong> to assign
+                            each municipality a risk level (Low / Medium / High / Critical) of losing cultural
+                            traditions.</li>
+                        <li><i class="bi bi-check-lg"></i> Leverage <strong>open demographic + cultural
+                                datasets</strong> (DANE, MinCultura, SIGOT) to ensure transparency and reproducibility.
+                        </li>
+                        <li><i class="bi bi-check-lg"></i> Provide <strong>actionable dashboards</strong> for local
+                            governments and heritage NGOs to prioritize preservation budgets.</li>
+                        <li><i class="bi bi-check-lg"></i> Reduce the <strong>reaction lag</strong> from years to months
+                            in identifying endangered traditions.</li>
+                    </ul>
                 </div>
-                <ul class="list-modern">
-                    <li><i class="bi bi-check-lg"></i> Develop an <strong>automated ML classifier</strong> to assign each municipality a risk level (Low / Medium / High / Critical) of losing cultural traditions.</li>
-                    <li><i class="bi bi-check-lg"></i> Leverage <strong>open demographic + cultural datasets</strong> (DANE, MinCultura, SIGOT) to ensure transparency and reproducibility.</li>
-                    <li><i class="bi bi-check-lg"></i> Provide <strong>actionable dashboards</strong> for local governments and heritage NGOs to prioritize preservation budgets.</li>
-                    <li><i class="bi bi-check-lg"></i> Reduce the <strong>reaction lag</strong> from years to months in identifying endangered traditions.</li>
-                </ul>
+            </div>
+            <div class="col-md-6">
+                <div class="card-modern p-4">
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <div class="icon-circle"><i class="bi bi-question-lg"></i></div>
+                        <h3 class="fw-bold mb-0">Questions the Model Must Answer</h3>
+                    </div>
+                    <ul class="list-modern">
+                        <li><i class="bi bi-arrow-right-short"></i> Which Colombian municipalities are at
+                            <strong>highest risk</strong> of cultural erosion based on current open data?</li>
+                        <li><i class="bi bi-arrow-right-short"></i> What combination of demographic (migration rate,
+                            median age, indigenous population decline) and cultural (number of annual festivals, active
+                            cultural groups, state investment) features best predicts risk?</li>
+                        <li><i class="bi bi-arrow-right-short"></i> How can risk levels be <strong>interpreted and
+                                visualized</strong> to support policy decisions?</li>
+                        <li><i class="bi bi-arrow-right-short"></i> Does the model identify municipalities with
+                            <strong>contradictory trends</strong> (e.g., low demographic risk but high cultural practice
+                            abandonment)?</li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="card-modern p-4">
-                <div class="d-flex align-items-center gap-3 mb-4">
-                    <div class="icon-circle"><i class="bi bi-question-lg"></i></div>
-                    <h3 class="fw-bold mb-0">Questions the Model Must Answer</h3>
-                </div>
-                <ul class="list-modern">
-                    <li><i class="bi bi-arrow-right-short"></i> Which Colombian municipalities are at <strong>highest risk</strong> of cultural erosion based on current open data?</li>
-                    <li><i class="bi bi-arrow-right-short"></i> What combination of demographic (migration rate, median age, indigenous population decline) and cultural (number of annual festivals, active cultural groups, state investment) features best predicts risk?</li>
-                    <li><i class="bi bi-arrow-right-short"></i> How can risk levels be <strong>interpreted and visualized</strong> to support policy decisions?</li>
-                    <li><i class="bi bi-arrow-right-short"></i> Does the model identify municipalities with <strong>contradictory trends</strong> (e.g., low demographic risk but high cultural practice abandonment)?</li>
-                </ul>
-            </div>
-        </div>
-    </div>
 
-    <!-- 4. Feasibility, 5. Risks -->
-    <div class="row g-5 mb-5">
-        <div class="col-md-6">
-            <div class="card-modern p-4">  
-                <div class="d-flex align-items-center gap-3 mb-4">
-                    <div class="icon-circle"><i class="bi bi-clipboard-check"></i></div>
-                    <h3 class="fw-bold mb-0">Feasibility of the Project</h3>
+        <!-- 4. Feasibility, 5. Risks -->
+        <div class="row g-5 mb-5">
+            <div class="col-md-6">
+                <div class="card-modern p-4">
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <div class="icon-circle"><i class="bi bi-clipboard-check"></i></div>
+                        <h3 class="fw-bold mb-0">Feasibility of the Project</h3>
+                    </div>
+                    <p><strong>Data availability:</strong> High. Open sources: DANE (population census, ethnicity,
+                        migration), Ministry of Culture (cultural infrastructure, festivals), ICANH (archaeological and
+                        living heritage records), and territorial development plans.</p>
+                    <p><strong>Technical feasibility:</strong> Medium-High. Supervised learning (Random Forest /
+                        XGBoost) or unsupervised clustering + risk indexing. Proven use cases for cultural vulnerability
+                        in UNESCO frameworks.</p>
+                    <p><strong>Implementation timeline:</strong> 8-12 weeks for first prototype (data ingestion →
+                        feature engineering → model training → dashboard).</p>
+                    <div class="progress mt-3" style="height: 6px; border-radius: 10px;">
+                    </div>
                 </div>
-                <p><strong>Data availability:</strong> High. Open sources: DANE (population census, ethnicity, migration), Ministry of Culture (cultural infrastructure, festivals), ICANH (archaeological and living heritage records), and territorial development plans.</p>
-                <p><strong>Technical feasibility:</strong> Medium-High. Supervised learning (Random Forest / XGBoost) or unsupervised clustering + risk indexing. Proven use cases for cultural vulnerability in UNESCO frameworks.</p>
-                <p><strong>Implementation timeline:</strong> 8-12 weeks for first prototype (data ingestion → feature engineering → model training → dashboard).</p>
-                <div class="progress mt-3" style="height: 6px; border-radius: 10px;">
+            </div>
+            <div class="col-md-6">
+                <div class="card-modern p-4">
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <div class="icon-circle"><i class="bi bi-exclamation-triangle"></i></div>
+                        <h3 class="fw-bold mb-0">Risks & Limitations</h3>
+                    </div>
+                    <ul class="list-modern">
+                        <li><i class="bi bi-database-slash"></i> <strong>Incomplete or outdated data:</strong> Some
+                            municipalities have missing cultural indicators (e.g., last festival record older than 5
+                            years).</li>
+                        <li><i class="bi bi-bar-chart-steps"></i> <strong>Proxy bias:</strong> Using demographic
+                            variables (e.g., youth out-migration) as proxy for tradition loss may oversimplify
+                            qualitative heritage dynamics.</li>
+                        <li><i class="bi bi-graph-down"></i> <strong>Labeling challenge:</strong> No existing official
+                            ground-truth labels; requires expert-based risk threshold definition or unsupervised
+                            anchoring.</li>
+                        <li><i class="bi bi-people"></i> <strong>Cultural sensitivity:</strong> Risk classification must
+                            not stigmatize communities; communication strategies are essential.</li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="card-modern p-4">
-                <div class="d-flex align-items-center gap-3 mb-4">
-                    <div class="icon-circle"><i class="bi bi-exclamation-triangle"></i></div>
-                    <h3 class="fw-bold mb-0">Risks & Limitations</h3>
-                </div>
-                <ul class="list-modern">
-                    <li><i class="bi bi-database-slash"></i> <strong>Incomplete or outdated data:</strong> Some municipalities have missing cultural indicators (e.g., last festival record older than 5 years).</li>
-                    <li><i class="bi bi-bar-chart-steps"></i> <strong>Proxy bias:</strong> Using demographic variables (e.g., youth out-migration) as proxy for tradition loss may oversimplify qualitative heritage dynamics.</li>
-                    <li><i class="bi bi-graph-down"></i> <strong>Labeling challenge:</strong> No existing official ground-truth labels; requires expert-based risk threshold definition or unsupervised anchoring.</li>
-                    <li><i class="bi bi-people"></i> <strong>Cultural sensitivity:</strong> Risk classification must not stigmatize communities; communication strategies are essential.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
 
-    <!-- 6. Expected Impact, Real-world Justification -->
-    <div class="row g-5 mb-5">
-        <div class="col-lg-7">
-            <div class="card-modern p-4">
-                <div class="d-flex align-items-center gap-3 mb-4">
-                    <div class="icon-circle"><i class="bi bi-graph-up-arrow"></i></div>
-                    <h3 class="fw-bold mb-0">Expected Impact</h3>
+        <!-- 6. Expected Impact, Real-world Justification -->
+        <div class="row g-5 mb-5">
+            <div class="col-lg-7">
+                <div class="card-modern p-4">
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <div class="icon-circle"><i class="bi bi-graph-up-arrow"></i></div>
+                        <h3 class="fw-bold mb-0">Expected Impact</h3>
+                    </div>
+                    <ul class="list-modern">
+                        <li><i class="bi bi-building"></i> <strong>Policy efficiency:</strong> Prioritize 20% of
+                            municipalities with critical risk for immediate cultural safeguarding programs.</li>
+                        <li><i class="bi bi-cash-stack"></i> <strong>Resource allocation:</strong> Redirect cultural
+                            investment from low-risk to high-risk areas, potentially saving ~30% of misallocated
+                            budgets.</li>
+                        <li><i class="bi bi-people-fill"></i> <strong>Community empowerment:</strong> Provide local
+                            collectives with evidence-based arguments to demand heritage protection.</li>
+                        <li><i class="bi bi-bar-chart-line"></i> <strong>Long-term monitoring:</strong> Annual risk
+                            index updates to track effectiveness of preservation actions.</li>
+                    </ul>
                 </div>
-                <ul class="list-modern">
-                    <li><i class="bi bi-building"></i> <strong>Policy efficiency:</strong> Prioritize 20% of municipalities with critical risk for immediate cultural safeguarding programs.</li>
-                    <li><i class="bi bi-cash-stack"></i> <strong>Resource allocation:</strong> Redirect cultural investment from low-risk to high-risk areas, potentially saving ~30% of misallocated budgets.</li>
-                    <li><i class="bi bi-people-fill"></i> <strong>Community empowerment:</strong> Provide local collectives with evidence-based arguments to demand heritage protection.</li>
-                    <li><i class="bi bi-bar-chart-line"></i> <strong>Long-term monitoring:</strong> Annual risk index updates to track effectiveness of preservation actions.</li>
-                </ul>
             </div>
-        </div>
-        <div class="col-lg-5">
-            <div class="card-dark-gradient p-4 text-white h-100">
-                <div class="d-flex align-items-center gap-3 mb-3">
-                    <div class="bg-white text-dark rounded-3 d-flex align-items-center justify-content-center" style="width: 52px; height: 52px;"><i class="bi bi-globe2 fs-3"></i></div>
-                    <h3 class="fw-bold mb-0 text-white">Real-world Justification</h3>
+            <div class="col-lg-5">
+                <div class="card-dark-gradient p-4 text-white h-100">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="bg-white text-dark rounded-3 d-flex align-items-center justify-content-center"
+                            style="width: 52px; height: 52px;"><i class="bi bi-globe2 fs-3"></i></div>
+                        <h3 class="fw-bold mb-0 text-white">Real-world Justification</h3>
+                    </div>
+                    <p class="text-white-50">Colombia's <strong>National Development Plan (2022-2026)</strong> includes
+                        cultural preservation as a transversal axis, yet lacks quantitative municipal-level risk
+                        metrics. This project aligns with SDG 11.4 (protect cultural heritage) and the UNESCO 2003
+                        Convention for Safeguarding Intangible Heritage. <br><br> In 2023, the Ministry of Culture
+                        reported that <strong>43% of Afro-Colombian and indigenous traditions</strong> are practiced
+                        only by elders >60 years old. Without systematic risk classification, Colombia risks losing
+                        centuries-old knowledge within one generation.</p>
                 </div>
-                <p class="text-white-50">Colombia's <strong>National Development Plan (2022-2026)</strong> includes cultural preservation as a transversal axis, yet lacks quantitative municipal-level risk metrics. This project aligns with SDG 11.4 (protect cultural heritage) and the UNESCO 2003 Convention for Safeguarding Intangible Heritage. <br><br> In 2023, the Ministry of Culture reported that <strong>43% of Afro-Colombian and indigenous traditions</strong> are practiced only by elders >60 years old. Without systematic risk classification, Colombia risks losing centuries-old knowledge within one generation.</p>
             </div>
         </div>
-    </div>
 
-    <!-- Description, Business Analysis -->
-    <div class="row g-5 mb-5">
-        <div class="col-md-6">
-            <div class="card-modern p-4">
-                <h4 class="fw-bold mb-3"><i class="bi bi-file-text-fill me-2 text-warning"></i>Detailed Problem Description</h4>
-                <p>Municipalities in Colombia experience heterogeneous cultural erosion. Current identification of at-risk traditions relies on subjective expert testimony or isolated ethnographic studies. No <strong>automated, scalable framework</strong> exists that fuses demographic open data (migration, age pyramids, ethnic composition) with cultural activity data (festival frequency, cultural organizations, public funding per capita). This leads to:</p>
-                <ul>
-                    <li>Delayed recognition of endangered practices (e.g., traditional weaving in Sucre, oral medicine in Vaupés).</li>
-                    <li>Inefficient distribution of <strong>Programa Nacional de Estímulos</strong> (approx. COP $45 billion/year).</li>
-                    <li>Lack of early warnings for intangible heritage disappearance.</li>
-                </ul>
+        <!-- Description, Business Analysis -->
+        <div class="row g-5 mb-5">
+            <div class="col-md-6">
+                <div class="card-modern p-4">
+                    <h4 class="fw-bold mb-3"><i class="bi bi-file-text-fill me-2 text-warning"></i>Detailed Problem
+                        Description</h4>
+                    <p>Municipalities in Colombia experience heterogeneous cultural erosion. Current identification of
+                        at-risk traditions relies on subjective expert testimony or isolated ethnographic studies. No
+                        <strong>automated, scalable framework</strong> exists that fuses demographic open data
+                        (migration, age pyramids, ethnic composition) with cultural activity data (festival frequency,
+                        cultural organizations, public funding per capita). This leads to:</p>
+                    <ul>
+                        <li>Delayed recognition of endangered practices (e.g., traditional weaving in Sucre, oral
+                            medicine in Vaupés).</li>
+                        <li>Inefficient distribution of <strong>Programa Nacional de Estímulos</strong> (approx. COP $45
+                            billion/year).</li>
+                        <li>Lack of early warnings for intangible heritage disappearance.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card-modern p-4">
+                    <h4 class="fw-bold mb-3"><i class="bi bi-pie-chart-fill me-2 text-warning"></i>Business Analysis
+                    </h4>
+                    <p><strong>Stakeholders:</strong> Ministry of Culture (decision-makers), departmental secretaries of
+                        culture (operational), local indigenous councils (beneficiaries), academia (researchers), and
+                        NGOs (Heritage Watch).</p>
+                    <p><strong>Value proposition:</strong> A data-driven risk classifier that transforms raw demographic
+                        and cultural open data into strategic intelligence — reducing political bias in cultural budget
+                        allocation and enabling early intervention.</p>
+                    <p><strong>Success metrics (KPI):</strong></p>
+                    <ul>
+                        <li>Model accuracy ≥ 80% in predicting expert-validated risk zones.</li>
+                        <li>At least 5 municipalities with critical risk receive new preservation programs within 6
+                            months after pilot.</li>
+                        <li>Dashboard adoption by 3 regional cultural secretariats.</li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="card-modern p-4">
-                <h4 class="fw-bold mb-3"><i class="bi bi-pie-chart-fill me-2 text-warning"></i>Business Analysis</h4>
-                <p><strong>Stakeholders:</strong> Ministry of Culture (decision-makers), departmental secretaries of culture (operational), local indigenous councils (beneficiaries), academia (researchers), and NGOs (Heritage Watch).</p>
-                <p><strong>Value proposition:</strong> A data-driven risk classifier that transforms raw demographic and cultural open data into strategic intelligence — reducing political bias in cultural budget allocation and enabling early intervention.</p>
-                <p><strong>Success metrics (KPI):</strong></p>
-                <ul>
-                    <li>Model accuracy ≥ 80% in predicting expert-validated risk zones.</li>
-                    <li>At least 5 municipalities with critical risk receive new preservation programs within 6 months after pilot.</li>
-                    <li>Dashboard adoption by 3 regional cultural secretariats.</li>
-                </ul>
+
+        <!-- Footer -->
+        <footer class="footer-modern">
+            <div class="container text-center">
+                <p><i class="bi bi-database-gear me-2"></i> Built with open data from DANE, Ministry of Culture, and
+                    ICANH</p>
+                <p class="small opacity-75">Cultural Heritage Risk Classifier</p>
             </div>
-        </div>
-    </div>
+        </footer>
 
-<!-- Footer -->
-<footer class="footer-modern">
-    <div class="container text-center">
-        <p><i class="bi bi-database-gear me-2"></i> Built with open data from DANE, Ministry of Culture, and ICANH</p>
-        <p class="small opacity-75">Cultural Heritage Risk Classifier</p>
-    </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
