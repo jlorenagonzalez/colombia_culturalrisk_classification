@@ -35,6 +35,10 @@ def data_engineering():
 def data_understanding():
     return render_template('data_understanding.html')
 
+@app.route('/model_evaluation')
+def model_evaluation():
+    return render_template('model_evaluation.html')
+
 
 @app.route('/model_development', methods=['GET', 'POST'])
 def model_development():
